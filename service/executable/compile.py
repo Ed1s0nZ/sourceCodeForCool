@@ -93,7 +93,7 @@ def mkdir(path):
         return True
     else:
         # 如果目录存在则不创建，并提示目录已存在
-        print("文件夹创建shibai")
+        print("文件夹创建失败")
         return False
 
 
