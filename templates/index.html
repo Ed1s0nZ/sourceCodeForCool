@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+            <link href="../statics/index.css" rel="stylesheet">
+                <title>
+                    免杀平台v0.1.2
+                </title>
+                <style>
+                    .container{max-width: 600px;margin: 20px auto;color:#ffffff;font-family: Consolas,Menlo,Monaco,"Courier New",monospace !important;}
+        input,select,textarea{margin: 1px 0;border: 1px solid #999;padding: .3em 0.1em;border-radius: 3px;}
+        p{text-align: right;color:#ffffff;}
+        h1{text-align: center;color:#ffffff;}
+        input.text {
+    width: 180px;
+    padding: 5px 3px;
+    line-height: 10px;
+    border: 1px solid #ccc;
+}
+.sel {
+    padding: 10px 15px 10px 8px;
+    position: relative;
+}
+                </style>
+            </link>
+        </meta>
+    </head>
+    <body>
+        <div class="container">
+            <h1>
+                免杀平台v0.1.2
+            </h1>
+            <form action="/" autocomplete="off" enctype="multipart/form-data" method="post" novalidate="">
+            	<div class="sel">
+                免杀方式:
+                <select name="bypass">
+                    <option value="AES1">
+                        AES加密shellcode1(.exe)
+                    </option>
+                    <option value="AES2">
+                        AES加密shellcode2(.exe)
+                    </option>
+                    <option value="HouQing">
+                        分离免杀HouQing(golang)(.zip)
+                    </option>
+                    <option value="AES_GO_separate">
+                        分离免杀(.zip)
+                    </option>
+                </select>
+                <br>
+                    <br>
+                        shellcode 生成方式:
+                        <br></div>
+                            <br><div class="sel">
+                                <input  checked="" name="choose_shellcode" type="radio" value="cs">
+                                    1. Cobalt Strike shellcode:
+                                    <br>
+                                        Payolad:
+                                        <select name="output">
+                                            <option value="C">
+                                                C
+                                            </option>
+                                            <option value="C#">
+                                                C#
+                                            </option>
+                                            <option value="Java">
+                                                Java
+                                            </option>
+                                            <option value="Perl">
+                                                Perl
+                                            </option>
+                                            <option value="Python">
+                                                Python
+                                            </option>
+                                            <option value="Ruby">
+                                                Ruby
+                                            </option>
+                                        </select>
+                                        <br>
+                                            <br>
+                                                Cobalt Strike Listener:
+                                                <br>
+                                                    IP:
+                                                   <input class="text" name="ip" placeholder="xxx.xxx.xxx.xxx" type="text">
+                                                        PORT:
+                                                        <input  class="text" name="port" placeholder="1-65535" type="text">
+                                                            <br>
+                                                                <br>
+                                                                    回连类型:
+                                                                    <input  checked="" name="type" type="radio" value="http">
+                                                                        Beacon_HTTP
+                                                                        <input  name="type" type="radio" value="https">
+                                                                            Beacon_HTTPS
+                                                                            <br>
+                                                                                <br>
+                                                                                   指令集:
+                                                                                    <input  checked="" name="x64" type="radio" value="1">
+                                                                                        Use x64 payload
+                                                                                        <input   name="x64" type="radio" value="0">
+                                                                                            Use x32 payload
+                                                                                            <br></div>
+                                                                                                <br>
+                                                                                                <div class="sel">
+                                                                                                    <input  name="choose_shellcode" type="radio" value="custom">
+                                                                                                        2. 自定义shellcode:
+                                                                                                        <br>
+                                                                                                        <textarea name="shellcode" id="" cols="45" rows="10" placeholder="此处可自定义shellcode,格式为:0xfc,0x12,0x34,0x56"></textarea>
+                                                                                                            <br></div>
+                                                                                                                <br>
+                                                                                                                <div class="sel">
+                                                                                                                    <input   name="binder" type="checkbox" value="binder">
+                                                                                                                        3. 捆绑上线:
+                                                                                                                        <br>
+                                                                                                                            <input  name="bindertype" type="radio" value="bindertype1">
+                                                                                                                                捆绑内置免杀马:
+                                                                                                                                <input  class="text" name="f1" type="file">
+                                                                                                                                    <br>
+                                                                                                                                        <input  name="bindertype" type="radio" value="bindertype2">
+                                                                                                                                            捆绑自定义木马:
+                                                                                                                                            <input  class="text" name="f2" type="file">
+                                                                                                                                                <input  class="text" name="f3" type="file">
+                                                                                                                                                    <br>
+                                                                                                                                                        <br>
+                                                                                                                                                            <input  class="text" name="生成免杀" type="submit" value="生成免杀">
+                                                                                                                                                                <input  class="text" name="重   置" type="reset">
+                                                                                                                                                                </input>
+                                                                                                                                                            </input>
+                                                                                                                                                        </br>
+                                                                                                                                                        <p>
+    问题反馈or建议 QQ:1310796748
+</p>
+<p>
+    捆绑上线生成的木马改后缀为"exe"
+</p>
+<p>
+    使用捆绑自定义木马时，第一个文件上传自己的木马，第二个文件上传你需要捆绑的文件
+</p>
+                                                                                                                                                    </br>
+                                                                                                                                                </input>
+                                                                                                                                            </input>
+                                                                                                                                        </input>
+                                                                                                                                    </br>
+                                                                                                                                </input>
+                                                                                                                            </input>
+                                                                                                                        </br>
+                                                                                                                    </input>
+                                                                                                                </div>
+                                                                                                                </br>
+                                                                                                            </br>
+                                                                                                        </br>
+                                                                                                    </input>
+                                                                                                </br>
+                                                                                            </br>
+                                                                                        </input>
+                                                                                    </input>
+                                                                                </br>
+                                                                            </br>
+                                                                        </input>
+                                                                    </input>
+                                                                </br>
+                                                            </br>
+                                                        </input>
+                                                    </input>
+                                                </br>
+                                            </br>
+                                        </br>
+                                    </br>
+                                </input>
+                            </br>
+                        </br>
+                    </br>
+                </br>
+            </form>
+        </div>
+    </body>
+</html>
